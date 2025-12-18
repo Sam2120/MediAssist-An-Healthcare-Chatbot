@@ -6,43 +6,34 @@
 
 The chatbot follows a sophisticated hybrid pipeline to ensure accuracy and minimize hallucinations:
 
-1. 
-**Intent Classification**: A fine-tuned **BioBERT** model categorizes user queries into 7 clinical intents (Definition, Causes, Symptoms, Treatment, Prevention, Risks, or Other).
+1. **Intent Classification**: A fine-tuned **BioBERT** model categorizes user queries into 7 clinical intents (Definition, Causes, Symptoms, Treatment, Prevention, Risks, or Other).
 
 
-2. 
-**Semantic Retrieval**: Based on the predicted intent, the system searches intent-specific knowledge bases using **Sentence-BERT** embeddings and **FAISS** for high-speed similarity matching.
+2. **Semantic Retrieval**: Based on the predicted intent, the system searches intent-specific knowledge bases using **Sentence-BERT** embeddings and **FAISS** for high-speed similarity matching.
 
 
-3. 
-**Grounded Generation**: The retrieved context is passed to **GPT-4o-mini**, which rephrases the medical data into patient-friendly language while strictly adhering to the provided facts.
+3. **Grounded Generation**: The retrieved context is passed to **GPT-4o-mini**, which rephrases the medical data into patient-friendly language while strictly adhering to the provided facts.
 
 
-4. 
-**Transparency**: Every response includes **source attribution**, citing the original dataset and text snippets used.
+4. **Transparency**: Every response includes **source attribution**, citing the original dataset and text snippets used.
 
 
 
 ## 🛠️ Tech Stack
 
-* 
-**Backend**: FastAPI, Python.
+* **Backend**: FastAPI, Python.
 
 
-* 
-**NLP & ML**: BioBERT (dmis-lab), Sentence-Transformers (`all-MiniLM-L6-v2`), PyTorch.
+* **NLP & ML**: BioBERT (dmis-lab), Sentence-Transformers (`all-MiniLM-L6-v2`), PyTorch.
 
 
-* 
-**Vector Database**: FAISS.
+* **Vector Database**: FAISS.
 
 
-* 
-**LLM**: OpenAI GPT-4o-mini (for grounded rewriting).
+* **LLM**: OpenAI GPT-4o-mini (for grounded rewriting).
 
 
-* 
-**Database**: MongoDB (for conversation history tracking).
+* **Database**: MongoDB (for conversation history tracking).
 
 
 * **Frontend**: Expo, React Native (Mobile Application).
@@ -51,12 +42,10 @@ The chatbot follows a sophisticated hybrid pipeline to ensure accuracy and minim
 
 The system is trained and grounded on **26,500 QA pairs** from two primary sources:
 
-* 
-**MedQuAD**: Curated from NIH and other authoritative government sources.
+* **MedQuAD**: Curated from NIH and other authoritative government sources.
 
 
-* 
-**Medical Meadow MedQA**: Large-scale medical questions for broader linguistic variety.
+* **Medical Meadow MedQA**: Large-scale medical questions for broader linguistic variety.
 
 
 
@@ -99,12 +88,10 @@ MONGODB_URL=mongodb://localhost:27017
 
 ## 👥 Authors
 
-* 
-**Abdul Rafeh** 
+* **Abdul Rafeh** 
 
 
-* 
-**Samith Kamarthi** 
+* **Samith Kamarthi** 
 
 
 
